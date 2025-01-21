@@ -1,12 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    private int hitPoints = 3;
+    [SerializeField] private Text HPText;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            TakeDamage();
         }
+    }
+
+
+    public void TakeDamage()
+    {
+        hitPoints -= 1;
+        HPText.text = hitPoints.ToString();
     }
 }
