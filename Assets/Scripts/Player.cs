@@ -13,6 +13,12 @@ public class Player : MonoBehaviour
         {
             TakeDamage();
         }
+
+        if (collision.CompareTag("Coin"))
+        {
+            GameManager.gameManager.AddCoin();
+            Destroy(collision.gameObject);
+        }
     }
 
 

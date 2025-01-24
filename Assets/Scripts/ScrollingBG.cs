@@ -16,6 +16,6 @@ public class ScrollingBG : MonoBehaviour
     private void Update()
     {
         distance += Time.deltaTime * 2f;
-        material.mainTextureOffset += Vector2.up * 0.0001f;
+        material.mainTextureOffset += Vector2.up * 0.0001f * GameManager.gameManager.gameSpeed;
     }
 }
