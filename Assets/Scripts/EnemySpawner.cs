@@ -1,19 +1,20 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
     [SerializeField] private Vector2 spawnPosition;
-
+    [SerializeField] private List<GameObject> enemyBlocks = new();
 
     private void Start()
     {
-        InvokeRepeating("SpawnEnemy", 7, 7);
+        InvokeRepeating("SpawnEnemy", 0, 2.5f);
     }
 
 
     private void SpawnEnemy()
     {
-        Instantiate(prefab, spawnPosition, transform.rotation);
+        Instantiate(enemyBlocks[Random.Range(0, enemyBlocks.Count)], spawnPosition, transform.rotation);
     }
+
 }
