@@ -26,5 +26,10 @@ public class Player : MonoBehaviour
     {
         hitPoints -= 1;
         HPText.text = hitPoints.ToString();
+
+        if (hitPoints == 0)
+        {
+            GameManager.gameManager.GameOver();
+        }
     }
 }

@@ -5,6 +5,7 @@ public class ScrollingBG : MonoBehaviour
 {
     private Material material;
     private float distance;
+    [SerializeField] private float moveSpeed;
 
 
     private void Awake()
@@ -16,6 +17,6 @@ public class ScrollingBG : MonoBehaviour
     private void Update()
     {
         distance += Time.deltaTime * 2f;
-        material.mainTextureOffset += Vector2.up * 0.0001f * GameManager.gameManager.gameSpeed;
+        material.mainTextureOffset += Vector2.up * moveSpeed * GameManager.gameManager.gameSpeed;
     }
 }
