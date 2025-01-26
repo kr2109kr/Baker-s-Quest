@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager { get; private set; }
 
-    private float score;
+    public float score { get; private set; }
     private float coin;
 
     [SerializeField] private Text scoreText;

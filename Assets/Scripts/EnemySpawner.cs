@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnEnemy", 0, 2.5f);
+        InvokeRepeating("SpawnEnemy", 0, 4f);
     }
 
 
